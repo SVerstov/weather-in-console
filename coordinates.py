@@ -1,7 +1,8 @@
 import os
 import requests
 from typing import NamedTuple
-from pympler import asizeof
+
+
 
 class Coordinates(NamedTuple):
     latitude: float
