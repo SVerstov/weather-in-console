@@ -1,17 +1,24 @@
 from coordinates import get_coords
 from weather_api_service import get_weather
 from weather_formatter import format_weather
+from exeptions import CantGetCoordinates, ApiServiceError
 
 
 def main():
-    coordinates = get_coords()
-    weather = get_weather(coordinates)
+    try:
+        coordinates = get_coords()
+    except CantGetCoordinates:
+        print('Ошибка: Не удалось получить координаты')
+        exit(1)
+
+    try:
+        weather = get_weather(coordinates)
+    except ApiServiceError:
+        print('Ошибка: Не удалось получить погоду')
+        exit(1)
+
     print(format_weather(weather))
 
 
-"""
-5 day
-api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-"""
 if __name__ == '__main__':
     main()

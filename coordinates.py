@@ -15,7 +15,7 @@ def get_coords() -> Coordinates:
     """ returns current coordinates"""
     latitude = config.latitude
     longitude = config.longitude
-    if not latitude or not longitude:
+    if not latitude or not longitude or config.GET_COORDS_BY_IP:
         return get_coords_by_ip()
     return Coordinates(latitude=_parse_float_coordinate(latitude),
                        longitude=_parse_float_coordinate(longitude))
