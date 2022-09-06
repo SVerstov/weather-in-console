@@ -38,7 +38,7 @@ def _parse_coords(ip_info: Response) -> Coordinates:
                        longitude=_parse_float_coordinate(longitude))
 
 
-def _parse_float_coordinate(value: str) -> float:
+def _parse_float_coordinate(value: str | int | float) -> float:
     try:
         return float(value)
     except ValueError:

@@ -1,8 +1,8 @@
 
-GET_COORDS_BY_IP = True
+GET_COORDS_BY_IP = False
 # if coords are None, the program get coordinates by ip
-latitude = None
-longitude = None
+latitude = 60
+longitude = 30
 
 
 # you get api here: https://home.openweathermap.org/api_keys
