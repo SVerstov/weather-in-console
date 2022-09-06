@@ -1,12 +1,12 @@
-from pydotenvs import load_env
-from gps_coords import get_coords
+from coordinates import get_coords
+from weather_api_service import get_weather
+from weather_formatter import format_weather
 
-def main:
-    load_env()
-    lat, lon = get_coords()
-    weather = get_weather(lat,lon)
+
+def main():
+    coordinates = get_coords()
+    weather = get_weather(coordinates)
     print(format_weather(weather))
-
 
 
 """
